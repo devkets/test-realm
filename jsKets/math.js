@@ -28,7 +28,7 @@ function bubbleSort(arr) {
 }
 
 function selectSort(arr) {
-    let minLocation, minValue, temp, swapped;
+    let minLocation, temp;
 
     for(i = 0; i < arr.length; i++) {
         minLocation = i;
