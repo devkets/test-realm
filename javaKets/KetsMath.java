@@ -8,7 +8,7 @@ public class KetsMath {
         }
     }
 
-    private static void mergeSort(int[] arr) {
+    private static void bubbleSort(int[] arr) {
         for (int i = 0; i < arr.length; i++) {
             for (int j = i+1; j < arr.length; j++) {
                 if (arr[i] > arr[j]) {
@@ -28,7 +28,7 @@ public class KetsMath {
             9,8,7,6,5,4,3,2,1,10,11,15,14,13,12,
             9,8,7,6,5,4,3,2,1,10,11,15,14,13,12
         };
-        mergeSort(arr);
+        bubbleSort(arr);
         printArray(arr);
         long endTime = System.currentTimeMillis();
         System.out.println("default: " + (endTime - startTime));
