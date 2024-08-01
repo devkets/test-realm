@@ -1,11 +1,15 @@
-const arr = [
-    9,8,7,6,5,4,3,2,1,10,11,15,14,13,12,
+const arrBubble = [
     9,8,7,6,5,4,3,2,1,10,11,15,14,13,12,
     9,8,7,6,5,4,3,2,1,10,11,15,14,13,12
 ];
 
-function printArray(arr) {
-    console.log("Logging array:")
+const arrSelect = [
+    9,8,7,6,5,4,3,2,1,10,11,15,14,13,12,
+    9,8,7,6,5,4,3,2,1,10,11,15,14,13,12
+];
+
+function printArray(arrayName, arr) {
+    console.log(arrayName)
     for(i in arr) {
         console.log(arr[i]);
     }
@@ -23,7 +27,28 @@ function bubbleSort(arr) {
     }
 }
 
+function selectSort(arr) {
+    let minLocation, minValue, temp, swapped;
+
+    for(i = 0; i < arr.length; i++) {
+        minLocation = i;
+        for(j = i + 1; j < arr.length; j++) {
+            if(arr[j] < arr[minLocation]) {
+                minLocation = j;
+            }
+        }
+        temp = arr[minLocation];
+        arr[minLocation] = arr[i];
+        arr[i] = temp;
+    }
+}
+
 console.time();
-bubbleSort(arr);
-printArray(arr);
+bubbleSort(arrBubble);
+printArray("Bubble: ", arrBubble);
+console.timeEnd();
+
+console.time();
+selectSort(arrSelect);
+printArray("Select: ", arrSelect);
 console.timeEnd();
